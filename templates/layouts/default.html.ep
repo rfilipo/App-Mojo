@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">  
+      <link rel="stylesheet" href="/css/all.css"> <!-- font awsome -->
+      <link rel="stylesheet" href="/css/style.css">
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  
+</head>
+
+  <body>
+
+<div id="mojo-app">
+
+<div id="header">
+<div id="menu-wrapper">
+
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+	  <img src="/img/o.png" alt="M">
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<!-- Menu list -->
+<ul>
+% for my $item (@$menu) { 
+<li><a href="<%= $item->{url} %>"><%= $item->{title} %></a></li>
+% } 
+</ul>
+<!-- end Menu list -->
+<form class="form-inline my-2 my-sm-0">
+  <div class="form-group mb-3">
+      <input class="form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </div>
+  <div class="form-group mb-3">
+      <button class="btn-sm btn-link my-2 my-sm-0 fab fa fa-search" type="submit"></button>
+  </div>
+</form>
+</div>
+</nav> 
+<!-- end Bootstrap Navbar -->
+
+</div>
+<header>
+<img class="header-image" src="/img/header.jpg">
+<img class="face-center" src="/img/face_center.png">
+<img class="face-side-l" src="/img/face_side.png">
+<img class="face-side-r" src="/img/face_side_r.png">
+
+</header>
+</div>    
+<%= content %>
+
+<div id="footer">
+Proudly made with Mojolicious. Read the documentation <%= link_to 'here' => '/perldoc' %>.
+</div>
+
+
+</div> <!-- /the mojo app -->
+
+</body>
+
+
+</html>

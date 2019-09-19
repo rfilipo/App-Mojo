@@ -1,0 +1,425 @@
+% layout 'app';
+% title 'Mojo app';
+% my $iframe = "/"; # index website
+% #my $iframe = "http://localhost:60606/"; # console by ttyd
+
+<div id="content" class="container-fluid">
+<div id="nav-wrap" class="clearfix"> 
+ <div id="nav-wrap-left" class="float-left"> 
+ <ul class="nav nav-pills">
+
+ <!-- The main menu nav -->
+
+ <!-- Pages -->
+  <li class="nav-item dropdown">
+    <a id="menu-article-title" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		pages</a>
+    <div class="dropdown-menu">
+
+
+      <button id="menu-article-new" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getarticles,~/"   >new</button>
+      <button id="menu-article-open" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getarticles,~/"   >open</button>
+      <button id="menu-article-save" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getarticles,~/"   >save</button>
+      <button id="menu-article-saveas" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getarticles,~/"   >save as ...</button>
+      <div class="dropdown-divider"></div>
+      <button id="menu-article-history" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getarticles,~/"   >history</button>
+      <button id="menu-article-github" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getarticles,~/"   >gitHub</button>
+
+
+
+    </div>
+  </li>
+
+ <!-- Media -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		media
+		</a>
+    <div class="dropdown-menu">
+      <button type="button" class="dropdown-item"  data-toggle="modal" data-target="#darkroomPopup">upload</button>
+      <a class="dropdown-item" href="#">Insert</a>
+      <a class="dropdown-item" href="#">Edit</a>
+    </div>
+  </li>
+
+
+
+ <!-- Menus -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		menus</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">New</a>
+      <a class="dropdown-item" href="#">Save</a>
+      <a class="dropdown-item" href="#">Save as ... </a>
+    </div>
+  </li>
+
+
+
+<!-- File -->
+  <li class="nav-item dropdown">
+    <a id="menu-file-title" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		files</a>
+    <div class="dropdown-menu">
+
+
+      <button id="menu-file-new" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getfiles,~/" data-command="loadDir" data-path="."  >new</button>
+      <button id="menu-file-open" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getfiles,~/"   >open</button>
+      <button id="menu-file-save" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getfiles,~/"   >save</button>
+      <button id="menu-file-saveas" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getfiles,~/"   >save as ...</button>
+      <div class="dropdown-divider"></div>
+      <button id="menu-file-history" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getfiles,~/"   >history</button>
+      <button id="menu-file-github" type="button" class="dropdown-item"  data-toggle="modal" data-target="#modalFileChooser" data-whatever="getfiles,~/"   >gitHub</button>
+
+
+    </div>
+  </li>
+
+ <!-- Themes -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		themes</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">New</a>
+      <a class="dropdown-item" href="#">Open</a>
+      <a class="dropdown-item" href="#">Save</a>
+      <a class="dropdown-item" href="#">Save as ... </a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Revert</a>
+      <a class="dropdown-item" href="#">GitHub</a>
+    </div>
+  </li>
+
+
+ <!-- Templates -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		templates</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">New</a>
+      <a class="dropdown-item" href="#">Open</a>
+      <a class="dropdown-item" href="#">Save</a>
+      <a class="dropdown-item" href="#">Save as ... </a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Revert</a>
+      <a class="dropdown-item" href="#">GitHub</a>
+    </div>
+  </li>
+
+
+ <!-- format -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		format
+		</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">html</a>
+      <a class="dropdown-item" href="#">perl</a>
+      <a class="dropdown-item" href="#">javascript</a>
+      <a class="dropdown-item" href="#">markdown</a>
+      <a class="dropdown-item" href="#">pod</a>
+      <a class="dropdown-item" href="#">css</a>
+    </div>
+  </li>
+
+ <!-- Behavior -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		behavior
+		</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Vim</a>
+      <a class="dropdown-item" href="#">Emacs</a>
+      <a class="dropdown-item" href="#">Normal</a>
+    </div>
+  </li>
+
+
+
+
+
+
+
+ </ul>
+
+
+ <!-- End main menu nav -->
+
+
+ </div>
+ 
+
+<!-- The other side -->
+<div id="nav-wrap-right" class="float-right"> 
+
+
+<ul class="nav nav-pills">
+
+<!--
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+-->
+
+ <!-- View -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		view
+		</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">IPhone 6</a>
+      <a class="dropdown-item" href="#">IPad</a>
+      <a class="dropdown-item" href="#">Desktop</a>
+      <a class="dropdown-item" href="#">Thing</a>
+      <div class="dropdown-divider"></div>
+      <button id="menu-view-bash" type="button" class="dropdown-item">bash</button>
+      <a class="dropdown-item" href="#">Filesystem</a>
+      <a class="dropdown-item" href="#">Project</a>
+    </div>
+  </li>
+
+
+ <!-- tasks -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		tasks
+		</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">New</a>
+      <a class="dropdown-item" href="#">Open</a>
+      <a class="dropdown-item" href="#">Save</a>
+      <a class="dropdown-item" href="#">Save as ... </a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Revert</a>
+      <a class="dropdown-item" href="#">GitHub</a>
+    </div>
+  </li>
+
+
+
+
+
+</ul>
+
+
+ </div>
+</div> 
+
+<div id="app-wrap" class="row"> 
+<!--
+<div id="app-controls" class="col-2">
+
+
+<div class="btn-group-vertical  btn-group-sm d-flex flex-col" role="group" aria-label="Button group with nested dropdown">
+<div class="btn-group btn-group-sm" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Files
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" href="#">New</a>
+      <a class="dropdown-item" href="#">Open</a>
+      <a class="dropdown-item" href="#">Save</a>
+      <a class="dropdown-item" href="#">Save as ...</a>
+      <a class="dropdown-item" href="#">Revert</a>
+      <a class="dropdown-item" href="#">Github</a>
+    </div>
+  </div>
+<button type="button" class="btn btn-dark      ">Articles</button>
+<button type="button" class="btn btn-dark      ">Menus</button>
+<button type="button" class="btn btn-dark      ">Themes</button>
+<button type="button" class="btn btn-dark      ">Templates</button>
+<button type="button" class="btn btn-dark      ">Images</button>
+<button type="button" class="btn btn-dark      ">Format</button>
+<button type="button" class="btn btn-dark      ">Behavior</button>
+<button type="button" class="btn btn-dark      ">View</button>
+<button type="button" class="btn btn-dark      ">Tasks</button>
+
+</div>
+</div>
+-->
+<!-- End buttons/menus -->
+
+<div id="editor-wrap" class="col-6">
+<!-- the ace app editor -->
+<div id="app-editor" class="flex-inline"></div>
+<!-- end ace app editor -->
+
+</div>
+<!-- end app editor-wrap -->
+
+<div id="app-tools" class="col-6">
+
+<div id="view-canvas">
+ <iframe src="<%= $iframe %>" width="590" height="318"></iframe>
+</div>
+
+<!-- The card
+<div class="card">
+  <div class="card-body">
+  </div>
+</div>
+-->
+
+<!--
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark app-navbar">
+<ul class="nav nav-tabs" id="app-tools-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+</nav>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+-->
+
+</div>
+</div>
+</div>
+
+<!-- Modal Image editor-->
+<div class="modal fade" id="darkroomPopup" tabindex="-1" role="dialog" aria-labelledby="darkroomModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="darkroomModalLabel">darkroom image editor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+<!-- the darkroom image editor -->
+<div id="darkroom-image-editor-wrap" class="pop">
+<div id="image-editor" class="flex-inline" style="display:block">
+<div id="darkroom-icons" style="height: 0px; width: 0px; position: absolute; visibility: hidden;"><!-- inject:svg --><svg xmlns="http://www.w3.org/2000/svg"><symbol id="close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></symbol><symbol id="crop" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M17 15h2V7c0-1.1-.9-2-2-2H9v2h8v8zM7 17V1H5v4H1v2h4v10c0 1.1.9 2 2 2h10v4h2v-4h4v-2H7z"></path></symbol><symbol id="done" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></symbol><symbol id="redo" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16a8.002 8.002 0 0 1 7.6-5.5c1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"></path></symbol><symbol id="rotate-left" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M7.11 8.53L5.7 7.11C4.8 8.27 4.24 9.61 4.07 11h2.02c.14-.87.49-1.72 1.02-2.47zM6.09 13H4.07c.17 1.39.72 2.73 1.62 3.89l1.41-1.42c-.52-.75-.87-1.59-1.01-2.47zm1.01 5.32c1.16.9 2.51 1.44 3.9 1.61V17.9c-.87-.15-1.71-.49-2.46-1.03L7.1 18.32zM13 4.07V1L8.45 5.55 13 10V6.09c2.84.48 5 2.94 5 5.91s-2.16 5.43-5 5.91v2.02c3.95-.49 7-3.85 7-7.93s-3.05-7.44-7-7.93z"></path></symbol><symbol id="rotate-right" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.55 5.55L11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10l4.55-4.45zM19.93 11a7.906 7.906 0 0 0-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47h2.02zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03zm3.89-2.42l1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48z"></path></symbol><symbol id="save" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"></path></symbol><symbol id="undo" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"></path></symbol></svg><!-- endinject --></div>
+<div class="figure-wrapper">
+          <figure class="image-container target">
+            <div class="darkroom-container"><div class="darkroom-toolbar"><div class="darkroom-button-group"><button type="button" class="darkroom-button darkroom-button-default" disabled=""><svg class="darkroom-icon"><use xlink:href="#undo"></use></svg></button><button type="button" class="darkroom-button darkroom-button-default"><svg class="darkroom-icon"><use xlink:href="#redo"></use></svg></button></div><div class="darkroom-button-group"><button type="button" class="darkroom-button darkroom-button-default"><svg class="darkroom-icon"><use xlink:href="#rotate-left"></use></svg></button><button type="button" class="darkroom-button darkroom-button-default"><svg class="darkroom-icon"><use xlink:href="#rotate-right"></use></svg></button></div><div class="darkroom-button-group"><button type="button" class="darkroom-button darkroom-button-default"><svg class="darkroom-icon"><use xlink:href="#crop"></use></svg></button><button type="button" class="darkroom-button darkroom-button-success darkroom-button-hidden"><svg class="darkroom-icon"><use xlink:href="#done"></use></svg></button><button type="button" class="darkroom-button darkroom-button-danger darkroom-button-hidden"><svg class="darkroom-icon"><use xlink:href="#close"></use></svg></button></div><div class="darkroom-button-group"><button type="button" class="darkroom-button darkroom-button-default"><svg class="darkroom-icon"><use xlink:href="#save"></use></svg></button></div></div><div class="darkroom-image-container"><div class="canvas-container" style="width: 600px; height: 450px; position: relative; user-select: none;"><canvas class="lower-canvas" width="600" height="450" style="position: absolute; width: 600px; height: 450px; left: 0px; top: 0px; user-select: none;"></canvas><canvas class="upper-canvas " width="600" height="450" style="position: absolute; width: 600px; height: 450px; left: 0px; top: 0px; user-select: none; cursor: default;"></canvas></div></div><div class="darkroom-source-container" style="display: none;"><div class="canvas-container" style="width: 1024px; height: 685px; position: relative; user-select: none;"><canvas class="lower-canvas" width="1024" height="685" style="position: absolute; width: 1024px; height: 685px; left: 0px; top: 0px; user-select: none;"></canvas><canvas class="upper-canvas " width="1024" height="685" style="position: absolute; width: 1024px; height: 685px; left: 0px; top: 0px; user-select: none;"></canvas></div></div>
+						<img src="./img/mojos/elvis_costella_sasj.jpg" alt="DomoKun" id="target" class="canvas-img" style="display: none;"></div>
+
+            <figcaption class="image-meta">
+              <a target="_blank" href="/img/mojos/elvis_costella_sasj.jpg">
+                ©
+                <strong class="image-meta-title">DomoKun</strong>
+                by
+                <em class="image-meta-author">Ben Torode</em>
+              </a>
+            </figcaption>
+          </figure>
+        </div>
+<link rel="stylesheet" href="./css/darkroom.css">
+<script src="./js/fabric.js"></script>
+<script src="./js/darkroom.js"></script>
+
+</div>
+</div>
+<!-- end image editor -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Image editor-->
+
+
+<!-- Modal File Chooser -->
+<div class="modal fade" tabindex="-1"  id="modalFileChooser" tabindex="-1" role="dialog" aria-labelledby="modalFileChooserLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalFileChooserLabel">File Chooser</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+<!--
+
+<nav id="navbar-example3" class="navbar navbar-dark bg-dark">
+  <nav class="nav nav-pills flex-column">
+    <a class="nav-link" href="#item-1">Item 1</a>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+      <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+    </nav>
+    <a class="nav-link" href="#item-2">Item 2</a>
+    <a class="nav-link" href="#item-3">Item 3</a>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+      <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+    </nav>
+  </nav>
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+
+-->
+
+<div id="fileTreeView"></div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal File Chooser-->
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/bootstrap-treeview.css">
+<link rel="stylesheet" href="/css/app.css">
+
+
+
+
+
+<!--
+Tabs:
+Default preview
+File browser
+Media
+Github
+Kanban
+-->
+
+
+

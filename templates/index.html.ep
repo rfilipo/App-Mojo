@@ -1,0 +1,27 @@
+% layout 'default';
+% title 'Mojo App';
+
+<div id="content">
+
+% for ($links->all){
+  <div class="content-wrap-home">
+    <div class="content-image">
+      <a href="/page/<%= $_->link %>">
+		    <img class="icon-home" src="<%== $_->image %>"\>
+			</a>
+		</div>
+    <div class="content-title">
+      <a href="/page/<%= $_->link %>">
+			  <%== $_->title %>
+			</a>
+    </div>
+    <div class="content-date"><%== $_->date %></div>
+    <div class="content-sumary"><%== $_->sumary %></div>
+  </div>
+  % }
+
+</div>
+
+<script  src="js/index.js"></script>
+
+

@@ -1,0 +1,9 @@
+% layout 'default';
+% title 'Mojo App';
+
+<div id="content">
+<div class="content-wrap">
+<p>hmmmm ...
+</div>
+</div>
+
